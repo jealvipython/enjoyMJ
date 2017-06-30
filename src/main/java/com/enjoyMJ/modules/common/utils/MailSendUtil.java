@@ -15,7 +15,7 @@ public class MailSendUtil {
 
 
     private static String mailLoginName = "josephPython@163.com";
-    private static String mailLoginPassword = "qweqwe123";
+    private static String mailLoginPassword = "PYTHONjoseph123";
 
     public static String myEmailSMTPHost = "smtp.163.com";
 
@@ -27,6 +27,8 @@ public class MailSendUtil {
 
 
         Properties properties = new Properties();   //参数配置
+
+
         properties.setProperty("mail.transport.protocol", "smtp");//协议
         properties.setProperty("mail.smtp.host", myEmailSMTPHost);//smtp邮件 地址
         properties.setProperty("mail.smtp.auth", "true");//是否认证 (不写报553  authentication is required)
