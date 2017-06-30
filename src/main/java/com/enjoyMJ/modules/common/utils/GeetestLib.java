@@ -25,6 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import strman.Strman;
 
 /**
  * Java SDK
@@ -114,6 +115,7 @@ public class GeetestLib {
 		this.captchaId = captchaId;
 		this.privateKey = privateKey;
 		this.newFailback = newFailback;
+
 	}
 	
 	/**
