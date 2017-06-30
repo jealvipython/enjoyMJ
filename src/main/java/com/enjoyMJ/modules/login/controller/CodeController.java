@@ -30,7 +30,7 @@ public class CodeController {
             'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
     @RequestMapping("/code.do")
-    public void getCode() throws IOException {
+    public void getCode(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         // 定义图像buffer
         BufferedImage buffImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics gd = buffImg.getGraphics();
@@ -73,27 +73,22 @@ public class CodeController {
             randomCode.append(code);
         }
         System.out.print(randomCode);
-//        // 将四位数字的验证码保存到Session中。
-//        HttpSession session = req.getSession();
-//        System.out.print(randomCode);
-//        session.setAttribute("code", randomCode.toString());
-//        // 禁止图像缓存。
-//        resp.setHeader("Pragma", "no-cache");
-//        resp.setHeader("Cache-Control", "no-cache");
-//        resp.setDateHeader("Expires", 0);
-//        resp.setContentType("image/jpeg");
-//        // 将图像输出到Servlet输出流中。
-//        ServletOutputStream sos = resp.getOutputStream();
-//        ImageIO.write(buffImg, "jpeg", sos);
-//        sos.close();
+        // 将四位数字的验证码保存到Session中。
+        HttpSession session = req.getSession();
+        System.out.print(randomCode);
+        session.setAttribute("code", randomCode.toString());
+        // 禁止图像缓存。
+        resp.setHeader("Pragma", "no-cache");
+        resp.setHeader("Cache-Control", "no-cache");
+        resp.setDateHeader("Expires", 0);
+        resp.setContentType("image/jpeg");
+        // 将图像输出到Servlet输出流中。
+        ServletOutputStream sos = resp.getOutputStream();
+        ImageIO.write(buffImg, "jpeg", sos);
+        sos.close();
     }
 
-    public static void main(String[] args) throws IOException {
-        HttpServletRequest request ;
-        HttpServletResponse response;
-        CodeController codeController = new CodeController();
-        codeController.getCode();
-    }
+
 }
 
 

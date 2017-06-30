@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import com.enjoyMJ.modules.common.utils.GeetestLib;
 
 
 import java.util.HashMap;
@@ -18,7 +18,6 @@ import java.util.Map;
  * Created by 85075 on 2017/4/12.
  */
 @Controller
-@RequestMapping("index")
 public class LoginController {
         @Autowired
         private UserDao userDao;

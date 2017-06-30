@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="../include/pqcBaseJsp.jsp"%>
+<%--<%@include file="../include/pqcBaseJsp.jsp"%>--%>
 
 <html>
     <head>
@@ -13,7 +13,7 @@
           <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     </head>
-    
+
     <body>
 
 		<div id="formContainer">
@@ -21,7 +21,10 @@
 				<a href="#" id="flipToRecover" class="flipLink">忘记了?</a>
 				<input type="text" name="loginEmail" id="loginEmail" placeholder="Email" />
 				<input type="password" name="loginPass" id="loginPass"  placeholder="pass" />
-				<input type="submit" name="submit" placeholder="Login" />
+				<input type="submit" name="submit" />
+
+				<div><img src="/code.do" id="codeImg" onclick="'/code.do'"></div>
+
 			</form>
 			<form id="recover" method="post" action="./">
 				<a href="#" id="flipToLogin" class="flipLink">Forgot?</a>
@@ -36,11 +39,6 @@
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="/static/modules/js/login/script.js"></script>
 
-	<script type="text/javascript">
-
-
-
-	</script>
     </body>
 </html>
 
